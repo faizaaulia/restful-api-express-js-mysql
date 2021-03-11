@@ -15,3 +15,10 @@ export const createProduct = (req, res) => {
     err ? console.log(err) : res.send(result)
   })
 }
+
+export const getProduct = (req, res) => {
+  let query = `SELECT * FROM products where product_id = '${req.params.id}'`
+  conn.query(query, (err, result) => {
+    err ? console.log(err) : res.send(result)
+  })
+}
